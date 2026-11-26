@@ -30,13 +30,14 @@ pipeline {
                     keyFileVariable: 'private_key',
                     usernameVariable: 'username'
                     )]
-                )
-                script {
-                    remote.name = "${env.HOST}"
-                    remote.host = "${env.HOST}"
-                    remote.user = "$username"
-                    remote.identity = readFile "$private_key"
-                    remote.allowAnyHosts = true
+                ) {
+                    script {
+                        remote.name = "${env.HOST}"
+                        remote.host = "${env.HOST}"
+                        remote.user = "$username"
+                        remote.identity = readFile "$private_key"
+                        remote.allowAnyHosts = true
+                    }
                 }
             }
         }
