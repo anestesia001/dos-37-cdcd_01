@@ -75,7 +75,8 @@ pipeline {
                 script {
                     sshCommand remote: remote, command: """
                         docker pull "${env.DOCKER_REPO}:${env.PRJ_NAME}-${params.REVISION}"
-                        docker run -d -it -p 3000:3000 "${env.DOCKER_REPO}:${env.PRJ_NAME}-${params.REVISION}"
+                        docker rm -f ${env.PRJ_NAME}-1 || true
+                        docker run -d -it -p 3000:3000 --name "${env.PRJ_NAME}-1 "${env.DOCKER_REPO}:${env.PRJ_NAME}-${params.REVISION}"
                     """
                 }
             }
