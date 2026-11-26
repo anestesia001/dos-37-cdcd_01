@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Checkout repo') {
             steps {
-                git branch: '${env.REVISION}' url: '${env.GIT_URL}', credentialsId: 'jenkins-agent-key'
+                git branch: '${env.REVISION}', url: '${env.GIT_URL}', credentialsId: 'jenkins-agent-key'
             }
         }
         stage('Build docker image') {
