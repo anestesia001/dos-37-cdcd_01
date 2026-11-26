@@ -53,6 +53,7 @@ pipeline {
                         docker build -t "${env.DOCKER_REPO}:${env.PRJ_NAME}-${params.REVISION}" .
                         docker login -u anestesia01 -p "${env.DOCKER_TOKEN}"
                         docker push "${env.DOCKER_REPO}:${env.PRJ_NAME}-${params.REVISION}"
+                        docker logout
                     """
                 }
             }
