@@ -92,8 +92,3 @@ if (require.main === module) {
 }
 
 module.exports = app;
-
-//app.listen(PORT, () => {
-//  console.log(`Diary app listening on port ${PORT}`);
-//});
-
