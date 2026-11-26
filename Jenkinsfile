@@ -10,7 +10,7 @@ pipeline {
           name: 'REVISION',
           type: 'PT_BRANCH',
           branchFilter: 'origin/(.*)',
-          defaultValue: 'main'
+          defaultValue: 'main',
           selectedValue: 'DEFAULT'
         )
     }
